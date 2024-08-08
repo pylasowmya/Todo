@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: lightgray;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000 url("blue.jpg") center/cover no-repeat;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h1 {
+            color: #333;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: calc(100% - 6px);
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: blue;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Add to List</h1>
+        </div>
+        <form name="fm" method="post" action="CreateList">
+            <table>
+                <tr>
+                    <td>Title : </td>
+                    <td><input type="text" name='title'></td>
+                </tr>
+                <tr>
+                    <td>Description : </td>
+                    <td><input type="text" name='description'></td>
+                </tr>
+                <tr>
+                    <td>Status : </td>
+                    <td>
+                        <select name="is_done">
+                            <option value=0>Pending</option>
+                            <option value=1>Completed</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ending date : </td>
+                    <td><input type="date" name='target_date'></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
